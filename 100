@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fbf7f2" />
+  <meta name="description" content="Una carta y 100 razones para Cindel, con todo mi amor." />
+  <title>Para Cindel ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fbf7f2;
+      --paper-deep: #f3e9e1;
+      --ink: #332b2b;
+      --muted: #7e7070;
+      --rose: #b96e7d;
+      --rose-dark: #965463;
+      --rose-light: #f0dce0;
+      --line: #e8dcd4;
+      --white: #fffdfb;
+      --shadow: 0 22px 65px rgba(82, 52, 51, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 10% 5%, rgba(240,220,224,.48), transparent 32rem),
+        radial-gradient(ellipse at 90% 55%, rgba(243,233,225,.8), transparent 34rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    button { font: inherit; }
+    a { color: inherit; }
+    .wrap { width: min(100% - 36px, 900px); margin-inline: auto; }
+    .topline {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 23px 0; color: var(--muted); font-size: .75rem;
+      letter-spacing: .16em; text-transform: uppercase;
+    }
+    .brand { color: var(--rose-dark); font-family: "Playfair Display", serif; font-size: 1.1rem; letter-spacing: .04em; text-transform: none; }
+    .tiny-heart { color: var(--rose); font-size: 1rem; }
+    .hero {
+      min-height: 82vh; display: grid; place-items: center; text-align: center;
+      padding: 50px 0 80px; position: relative;
+    }
+    .hero-inner { max-width: 700px; position: relative; z-index: 1; }
+    .eyebrow {
+      color: var(--rose-dark); font-size: .73rem; letter-spacing: .22em;
+      text-transform: uppercase; font-weight: 600;
+    }
+    h1, h2, h3, .serif { font-family: "Playfair Display", serif; font-weight: 400; }
+    h1 { font-size: clamp(3.4rem, 11vw, 7rem); line-height: .98; margin: 20px 0 22px; letter-spacing: -.055em; }
+    h1 em { color: var(--rose); font-weight: 400; }
+    .hero-copy { max-width: 510px; margin: 0 auto; color: var(--muted); font-size: clamp(1rem, 2.5vw, 1.13rem); }
+    .ornament { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 28px auto; color: var(--rose); }
+    .ornament::before, .ornament::after { content: ""; height: 1px; width: 54px; background: var(--line); }
+    .button {
+      border: 0; cursor: pointer; border-radius: 999px; padding: 14px 24px;
+      background: var(--ink); color: white; transition: transform .2s, background .2s, box-shadow .2s;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      box-shadow: 0 8px 22px rgba(51,43,43,.12); text-decoration: none;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--rose-dark); box-shadow: 0 12px 28px rgba(150,84,99,.2); }
+    .button:focus-visible, .reason-card:focus-visible { outline: 3px solid #d99daa; outline-offset: 4px; }
+    .button.secondary { background: transparent; color: var(--ink); border: 1px solid var(--line); box-shadow: none; }
+    .button.secondary:hover { border-color: var(--rose); color: var(--rose-dark); background: #fff8f7; }
+    .scroll-note { position: absolute; bottom: 22px; left: 0; right: 0; color: #9b8d88; font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; }
+    .section { padding: 74px 0; }
+    .section-head { text-align: center; max-width: 610px; margin: 0 auto 36px; }
+    .section-head h2 { font-size: clamp(2.3rem, 7vw, 4rem); line-height: 1.1; margin: 12px 0; letter-spacing: -.035em; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .letter-shell {
+      max-width: 720px; margin: 0 auto; padding: clamp(24px, 6vw, 52px);
+      background: rgba(255,253,251,.82); border: 1px solid var(--line);
+      box-shadow: var(--shadow); border-radius: 5px 5px 22px 5px; position: relative;
+    }
+    .letter-shell::before { content: "♡"; position: absolute; top: 16px; right: 22px; color: var(--rose); font-size: 1.35rem; }
+    .letter-text { color: #5f5351; }
+    .letter-text p { margin: 0 0 1.1em; }
+    .signature { color: var(--rose-dark); font-family: "Playfair Display", serif; font-style: italic; font-size: 1.5rem; margin-top: 24px; }
+    .reasons-section { background: rgba(255,253,251,.62); border-block: 1px solid rgba(232,220,212,.8); }
+    .progress-wrap { max-width: 520px; margin: 0 auto 28px; }
+    .progress-label { display: flex; justify-content: space-between; font-size: .8rem; color: var(--muted); margin-bottom: 8px; }
+    .progress-track { height: 5px; background: var(--paper-deep); border-radius: 999px; overflow: hidden; }
+    .progress-fill { height: 100%; width: 0; background: var(--rose); border-radius: inherit; transition: width .35s ease; }
+    .reasons-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .reason-card {
+      border: 1px solid var(--line); border-radius: 14px; min-height: 145px;
+      background: var(--white); text-align: left; padding: 19px; cursor: pointer;
+      transition: transform .2s, border-color .2s, box-shadow .2s; color: var(--ink);
+    }
+    .reason-card:hover { transform: translateY(-3px); border-color: #d9aeb7; box-shadow: 0 10px 25px rgba(82,52,51,.06); }
+    .reason-number { color: var(--rose); font-size: .72rem; letter-spacing: .13em; display: block; margin-bottom: 10px; }
+    .reason-content { font-size: .93rem; line-height: 1.55; }
+    .reason-card.locked .reason-content { color: #a18f8d; }
+    .reason-card.locked .reason-content::before { content: "Toca para descubrir ♡"; }
+    .reason-card.locked .reason-number { color: #b6a5a1; }
+    .reason-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 28px; }
+    .distance-card {
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center;
+      max-width: 680px; margin: 0 auto; padding: 27px; border: 1px solid var(--line);
+      background: var(--white); border-radius: 18px; text-align: center;
+    }
+    .distance-place { font-family: "Playfair Display", serif; font-size: 1.25rem; }
+    .distance-sub { color: var(--muted); font-size: .8rem; }
+    .distance-heart { color: var(--rose); font-size: 1.6rem; animation: heartbeat 1.8s infinite; }
+    .promise {
+      text-align: center; max-width: 700px; margin: 0 auto; padding: clamp(28px, 7vw, 60px);
+      border: 1px solid var(--line); background: linear-gradient(145deg, rgba(255,253,251,.95), rgba(243,233,225,.6));
+      border-radius: 22px; box-shadow: var(--shadow);
+    }
+    .promise h2 { font-size: clamp(2.3rem, 7vw, 4.3rem); line-height: 1.08; margin: 14px 0 22px; }
+    .promise p { color: var(--muted); }
+    .promise-words { font-family: "Playfair Display", serif; color: var(--rose-dark) !important; font-size: 1.35rem; font-style: italic; }
+    footer { text-align: center; color: #9b8d88; font-size: .78rem; padding: 36px 0 48px; }
+    .floating-hearts { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 5; }
+    .float-heart { position: absolute; bottom: -35px; color: var(--rose); opacity: 0; animation: floatUp linear forwards; }
+    .hidden { display: none !important; }
+    .fade-in { animation: fadeIn .75s both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes floatUp { 0% { transform: translateY(0) rotate(0deg); opacity: 0; } 12% { opacity: .6; } 85% { opacity: .4; } 100% { transform: translateY(-110vh) rotate(28deg); opacity: 0; } }
+    @keyframes heartbeat { 0%, 100% { transform: scale(1); } 10%, 25% { transform: scale(1.15); } 18%, 32% { transform: scale(1); } }
+    @media (max-width: 580px) {
+      .wrap { width: min(100% - 26px, 900px); }
+      .topline { padding: 17px 0; }
+      .hero { min-height: 78vh; padding-top: 30px; }
+      .section { padding: 56px 0; }
+      .reasons-grid { grid-template-columns: 1fr; gap: 10px; }
+      .reason-card { min-height: auto; padding: 17px; }
+      .distance-card { padding: 19px 12px; gap: 8px; }
+      .distance-place { font-size: 1.05rem; }
+      .distance-sub { font-size: .72rem; }
+      .button { padding: 13px 18px; font-size: .9rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
+  <header class="wrap topline">
+    <div class="brand">para Cindel <span class="tiny-heart">♡</span></div>
+    <div>hecho con amor</div>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="inicio">
+      <div class="hero-inner">
+        <div class="eyebrow">Una pequeña sorpresa para ti</div>
+        <h1>Para ti,<br><em>Cindel.</em></h1>
+        <p class="hero-copy">Aunque haya kilómetros entre nosotros, siempre encuentro mil formas de sentirte cerquita. Hoy quería dejarte un pedacito de todo lo que llevo en el corazón.</p>
+        <div class="ornament" aria-hidden="true">♡</div>
+        <button class="button" id="openLetter">Abrir mi cartita <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="scroll-note">hecho para ti, con todo mi corazón ↓</div>
+    </section>
+
+    <section class="section wrap hidden" id="carta">
+      <div class="section-head">
+        <div class="eyebrow">Antes de todo</div>
+        <h2>Unas palabras para ti</h2>
+        <p>Porque hay sentimientos que merecen un lugar bonito donde quedarse.</p>
+      </div>
+      <article class="letter-shell letter-text fade-in">
+        <p>Mi Cindel,</p>
+        <p>No sé si estas palabras alcancen para explicar todo lo que significas para mí, pero quería intentarlo. No sabes cuanto quiero que esta distancia se acabe y poder besarte y abrazarte y decirte en persona todas las cosas que me haces sentir.</p>
+        <p>Solo queria decirte lo muhco que te amo y lo feliz que me siento contigo todos los dias con cada mensaje o audio tuyo y que te amo con todo mi corazon </p>
+        <p>No eres importante para mí solamente en los días bonitos. También te elijo en los días cansados, cuando el horario no ayuda por mis estudios, cuando nos extrañamos más de la cuenta cuando te vas al voley o a bailar :c y cuando lo único que quisiera es estar ahí contigo acompañandote a dodne sea que vayas.</p>
+        <p>Así que esta cartita es para recordarte lo mucho que me importas y lo importante que eres para mi cindel.</p>
+        <div class="signature">Con todo mi amor, siempre ♡</div>
+      </article>
+      <div style="text-align:center; margin-top:28px">
+        <button class="button" id="goReasons">Descubrir las 100 razones ↓</button>
+      </div>
+    </section>
+
+    <section class="section reasons-section hidden" id="razones">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Una por una, todas tuyas</div>
+          <h2>100 cosas que amo de ti</h2>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Razones descubiertas</span><span id="progressText">0 de 100</span></div>
+          <div class="progress-track" role="progressbar" aria-label="Razones descubiertas" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+        <div class="reasons-grid" id="reasonsGrid"></div>
+        <div class="reason-controls">
+          <button class="button secondary" id="revealAll">Descubrir las 100 ♡</button>
+          <button class="button hidden" id="goPromise">Leer mi promesa ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap hidden" id="distancia">
+      <div class="section-head">
+        <div class="eyebrow">Aunque haya kilómetros</div>
+        <h2>Dos lugares, el mismo cielo.</h2>
+        <p>No siempre podemos estar en el mismo sitio, pero podemos seguir construyendo algo bonito, incluso desde lejos.</p>
+      </div>
+      <div class="distance-card">
+        <div>
+          <div class="distance-place">Tu mundo</div>
+          <div class="distance-sub">donde estés tú</div>
+        </div>
+        <div class="distance-heart" aria-label="un corazón">♡</div>
+        <div>
+          <div class="distance-place">Mi mundo</div>
+          <div class="distance-sub">pensando en ti</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap hidden" id="promesa">
+      <div class="promise fade-in">
+        <div class="eyebrow">Y una última cosa...</div>
+        <h2>Mi promesa<br><em style="color:var(--rose)">para ti.</em></h2>
+        <p>Te prometo seguir cuidando lo nuestro con paciencia, sinceridad y cariño. Prometo escucharte, hablar contigo incluso cuando algo sea difícil y recordar que estamos en el mismo equipo.</p>
+        <p>Prometo celebrar tus alegrías, acompañarte en los días pesados y no dar por sentado ninguno de esos ratitos que compartimos, por pequeños que parezcan. No te prometo que todos los días serán perfectos, pero sí quiero esforzarme para que nunca tengas que adivinar si me importas.</p>
+        <p>Y cuando la distancia se sienta enorme, quiero que recordemos por qué empezamos, todo lo que hemos construido y el abrazo que todavía nos espera.</p>
+        <p class="promise-words">No te prometo un camino sin kilómetros; te prometo seguir caminándolo contigo. ♡</p>
+        <p>Gracias por ser tú, Cindel. Si pudiera elegir de nuevo, mi corazón volvería a buscarte.</p>
+        <div class="signature">Tú y yo, paso a paso. ♡</div>
+        <div style="margin-top:28px"><button class="button" id="finalHearts">Un último montón de amor ♡</button></div>
+        <p id="finalMessage" class="hidden" style="margin-top:20px;color:var(--rose-dark)">Por si hoy no te lo he dicho suficiente: te amo, Cindel. Muchísimo. 💗</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">hecho especialmente para Cindel · con amor, desde mi corazón ♡</footer>
+
+  <script>
+    const reasons = [
+      "Tu sonrisa, porque cada que la veo me vuelve loquito por ti.",
+      "La forma en que puedes hacerme feliz con cada mensaje tuyo.",
+      "Que seas tú e cada audio que me mandas haciendo tus locuras muak.",
+      "Tu manera de hablarme cuando me quieres engreir :c.",
+      "Como consigues aparecer en mis sueños.",
+      "Que hasta un «¿qué haces?» tuyo me parezca un plan bonito.",
+      "Tu risa, ecuando te ries como tetera o como visagra muakakaka .",
+      "Que te pongas asi berrinchudit conmigo solo para que te engria.", 
+      "Que me hagas extrañarte incluso justo después de despedirnos, mami te etaño cuando te vas :c.",
+      "La ilusion que tengo de que estes aqui conmigo.",
+      "Tus ocurrencias, cuando te pintaste las cejas como red jaaj muak.",
+      "Cómo haces que una conversación normal se vuelva mi parte favorita del día.",
+      "Que pueda contarte tonterías y aun así quiera contarte cien más.",
+      "Que seas mi enojoncita preciosa.",
+      "Los detalles que me das muak :c copiona te amo.",
+      "Que me inspires a ser una mejor versión de mí para poder ser mejor novio :c.",
+      "La ternura que aparece en ti cuando menos me lo espero.",
+      "Que podamos reírnos juntos .",
+      "La paz que siento cuando estamos bien, ño quiero pelear contigo :c.",
+      "Que me importen tus días, incluso cuando no puedo estar ahí físicamente.",
+      "Tus mensajes bonitos, que a veces vuelvo a leer como si fueran nuevos.", 
+      "Que seas mi chiquita tuntunera.",
+      "Y la ilusion que tengo de ir a verte bailar.",
+      "La forma en que haces que la distancia valga la pena.",
+      "Que tengamos nuestras propias bromas mi papita.",
+      "Tu voz que quisiera tener más cerquita.",
+      "Que a veces una llamada contigo haga que el tiempo pase volando.",
+      "Que recreemos las cosas que haremos cunado estemos juntos.",
+      "Tu paciencia cuando los horarios se ponen complicados.",
+      "Que busquemos la manera de comunicarnos en medio de días ocupados.",
+      "La emoción de planear la próxima vez que nos veamos.",
+      "Imaginar el abrazo que nos debemos.",
+      "Pensar en todas las cosas sencillas que haremos cuando estemos juntos.",
+      "Que un día común pueda convertirse en un recuerdo especial contigo.",
+      "Tu manera de demostrarme cariño.",
+      "Que me hagas sentir escuchado o leido :c.",
+      "Tu honestidad, incluso cuando hablar no sea lo más fácil.",
+      "Que podamos aprender de nuestros errores.",
+      "Las ganas de solucionar las cosas en vez de dejar de intentarlo.",
+      "Que seamos dos personas desconocidas que un dia decidimos conocernos más.",
+      "Tu lado dulce que me deja sonriendo como tonto.",
+      "Tu lado gracioso que aparece justo cuando necesito reírme.",
+      "Esos rizos hermosos que me vuelven loquito ", 
+      "Que me acuerde de ti al escuchar una canción.",
+      "Que algunas canciones ahora tengan un poquito de nosotros.",
+      "Que vea algo bonito y piense a Cindel le gustaría.",
+      "Que quiera mandarte memes solo para que sonrias :C.",
+      "Que pueda pasar demasiado tiempo eligiendo qué enviarte porque quiero hacerte sonreír.",
+      "Que me hagas revisar el celular a cada momento.",
+      "Que una notificación tuya pueda ganarle a cualquier cosa que este haciendo.",
+      "Que seas parte de mis planes y también de mis sueños.",
+      "La forma en que me haces sentir querido cuando estamos conectados.",
+      "Esos labios hermosos tuyos que quiero morder.",
+      "Que podamos crear recuerdos aunque no siempre compartamos el mismo lugar.",
+      "Esos ojitos precioso de mi virolita.",
+      "Que a veces relea nuestros chats y sonría sin querer.",
+      "Que seas capaz de hacerme falta de una manera tan tuya.",
+      "Que quiera conocerte más, incluso después de todo lo que ya sé.",
+      "Que cada conversación me deje algo nuevo de ti.",
+      "Tus gustos, tus manías y esas pequeñas cosas que te hacen Cindel.",
+      "Que seas tan hermosa y perfecta",
+      "Que podamos tener días raros y seguir intentando entendernos.",
+      "Que tus sueños me importen y quiera verte cumplirlos.",
+      "Que me nazca celebrar tus logros como si fueran un poquito míos.",
+      "Tu forma de ser y de como me tratas", 
+      "Que pueda admirarte por cosas que quizá tú consideras normales.",
+      "Que compartas conmigo lo que paso en tu dia",
+      "Que el cariño no dependa de estar pegados las veinticuatro horas.",
+      "Toda tu carita preciosa.", 
+      "Que te ame de una forma incondicional.", 
+      "Que el buenos días tenga otro encanto cuando viene de ti.",
+      "Que seas mi celosita hermosa.",
+      "Que me importe si comiste, si descansaste o si tuviste un día pesado.",
+      "Que quiera recordarte que mereces cosas bonitas.",
+      "Que hasta nuestras despedidas incluyan ganas de volver a hablar.",
+      "Que siempre haya algo más que quiera preguntarte.",
+      "Que me sienta tan bien estando contigo.",
+      "Que pueda imaginar una tarde sencilla contigo y sentir que sería un planazo.",
+      "Que un abrazo tuyo imaginado ya me parezca insuficiente; necesito el real.",
+      "Que me den ganas de tomarte la mano mientras caminamos.",
+      "Que quiera compartir contigo comidas, paseos y hasta salir de compras contigo.",
+      "Que pueda imaginarme riéndome contigo por una tontería en la calle.",
+      "Que las cosas simples se sientan especiales cuando pienso en hacerlas contigo.",
+      "Que quiera darte cariño también en los días en que no estés de humor.",
+      "Que hagas que te ame de una forma tan fuerte.",
+      "Que podamos hablar de lo que esperamos y construirlo poco a poco.",
+      "Que me guste la idea de seguir sumando capítulos a nuestra historia.",
+      "Que haya cosas que solo nosotros entendemos.",
+      "Que me hagas sonreír mientras tes escribo",
+      "Los audios hermosos que me mandas.",
+      "Y que cuando escucho tu voz hermosa me pongo nervioso",
+      "Que seas mi excusa favorita para ponerme cursi sin vergüenza.",
+      "Que pueda molestarte cariñosamente y luego intentar compensarlo mi engreida.",
+      "Que podamos arreglar nuestras peleas :C.",
+      "Que quiera aprender qué te hace sentir amada de verdad.",
+      "Que seas mi esposa y que me hayas elejido de la forma en que la hiciste.",
+      "Que, aunque haya días difíciles, sigas queriendo cuidar lo nuestro.",
+      "Que me emocione pensar en el momento que pueda verte y abrazarte de verdad.",
+      "Que seas Cindel: única, la mas hermosa y alguien a quien quiero demasiado.",
+      "Que me permitas quererte y que sigamos eligiendo conocernos.",
+      "Que después de estas cien razones todavía me queden palabras por decirte."
+    ];
+
+    const grid = document.getElementById("reasonsGrid");
+    const progressText = document.getElementById("progressText");
+    const progressFill = document.getElementById("progressFill");
+    const progressBar = document.getElementById("progressBar");
+    const revealAllButton = document.getElementById("revealAll");
+    const promiseButton = document.getElementById("goPromise");
+    const revealed = new Set();
+
+    reasons.forEach((reason, index) => {
+      const button = document.createElement("button");
+      button.className = "reason-card locked";
+      button.type = "button";
+      button.setAttribute("aria-label", `Descubrir la razón ${index + 1}`);
+      button.innerHTML = `<span class="reason-number">${String(index + 1).padStart(2, "0")} / 100</span><span class="reason-content"></span>`;
+      button.querySelector(".reason-content").textContent = "";
+      button.addEventListener("click", () => {
+        if (!revealed.has(index)) {
+          revealed.add(index);
+          button.classList.remove("locked");
+          button.querySelector(".reason-content").textContent = reason;
+          button.setAttribute("aria-label", `Razón ${index + 1}: ${reason}`);
+          updateProgress();
+          makeHeart();
+        }
+      });
+      grid.appendChild(button);
+    });
+
+    function updateProgress() {
+      const count = revealed.size;
+      progressText.textContent = `${count} de 100`;
+      progressFill.style.width = `${count}%`;
+      progressBar.setAttribute("aria-valuenow", count);
+      if (count === 100) {
+        revealAllButton.textContent = "Las 100 razones son tuyas ♡";
+        promiseButton.classList.remove("hidden");
+      }
+    }
+
+    function revealAll() {
+      [...grid.children].forEach((button, index) => {
+        if (!revealed.has(index)) {
+          revealed.add(index);
+          button.classList.remove("locked");
+          button.querySelector(".reason-content").textContent = reasons[index];
+          button.setAttribute("aria-label", `Razón ${index + 1}: ${reasons[index]}`);
+        }
+      });
+      updateProgress();
+      for (let i = 0; i < 18; i++) setTimeout(makeHeart, i * 100);
+    }
+
+    function showSection(id) {
+      const section = document.getElementById(id);
+      section.classList.remove("hidden");
+      section.classList.add("fade-in");
+      setTimeout(() => section.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+    }
+
+    document.getElementById("openLetter").addEventListener("click", () => {
+      showSection("carta");
+      for (let i = 0; i < 5; i++) setTimeout(makeHeart, i * 180);
+    });
+    document.getElementById("goReasons").addEventListener("click", () => {
+      const distanceSection = document.getElementById("distancia");
+      distanceSection.classList.remove("hidden");
+      distanceSection.classList.add("fade-in");
+      showSection("razones");
+    });
+    revealAllButton.addEventListener("click", revealAll);
+    promiseButton.addEventListener("click", () => showSection("promesa"));
+    document.getElementById("finalHearts").addEventListener("click", () => {
+      document.getElementById("finalMessage").classList.remove("hidden");
+      for (let i = 0; i < 30; i++) setTimeout(makeHeart, i * 90);
+    });
+
+    function makeHeart() {
+      const holder = document.getElementById("floatingHearts");
+      const heart = document.createElement("span");
+      heart.className = "float-heart";
+      heart.textContent = Math.random() > .45 ? "♡" : "♥";
+      heart.style.left = `${Math.random() * 100}%`;
+      heart.style.fontSize = `${12 + Math.random() * 20}px`;
+      heart.style.animationDuration = `${5 + Math.random() * 5}s`;
+      holder.appendChild(heart);
+      heart.addEventListener("animationend", () => heart.remove(), { once: true });
+    }
+    setInterval(() => { if (Math.random() > .35) makeHeart(); }, 1500);
+  </script>
+</body>
+</html>
